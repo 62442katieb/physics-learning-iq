@@ -1,5 +1,5 @@
 **/submit-*
-*.ipynb_checkpoints/*
+**.ipynb_checkpoints/*
 applyxfm.sub
 bad-qa.png
 cp-corrmats.sh
