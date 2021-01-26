@@ -16,7 +16,7 @@ WMIdat <- dat[ which(dat$Measure=='WMI'),]
 FSIQdat <- dat[ which(dat$Measure=='FSIQ'),]
 
 print('************************** FSIQ ************************')
-print('Shapiro test for notmality:')
+print('Shapiro test for normality:')
 FSIQdat %>% group_by(Class.Type, Sex, Time) %>% shapiro_test(IQ)
 print('Outlier check:')
 FSIQdat %>% group_by(Class.Type, Sex, Time) %>% identify_outliers(IQ)
@@ -27,7 +27,7 @@ mixed_aov <- aov(IQ ~ Sex*Class.Type*Time + Error(Subject/(Time)) + Sex*Class.Ty
 summary(mixed_aov)
 
 print('************************** PRI *************************')
-print('Shapiro test for notmality:')
+print('Shapiro test for normality:')
 PRIdat %>% group_by(Class.Type, Sex, Time) %>% shapiro_test(IQ)
 print('Outlier check:')
 PRIdat %>% group_by(Class.Type, Sex, Time) %>% identify_outliers(IQ)
@@ -38,7 +38,7 @@ mixed_aov <- aov(IQ ~ Sex*Class.Type*Time + Error(Subject/(Time)) + Sex*Class.Ty
 summary(mixed_aov)
 
 print('************************** PSI *************************')
-print('Shapiro test for notmality:')
+print('Shapiro test for normality:')
 PSIdat %>% group_by(Class.Type, Sex, Time) %>% shapiro_test(IQ)
 print('Outlier check:')
 PSIdat %>% group_by(Class.Type, Sex, Time) %>% identify_outliers(IQ)
@@ -49,7 +49,7 @@ mixed_aov <- aov(IQ ~ Sex*Class.Type*Time + Error(Subject/(Time)) + Sex*Class.Ty
 summary(mixed_aov)
 
 print('************************** VCI *************************')
-print('Shapiro test for notmality:')
+print('Shapiro test for normality:')
 VCIdat %>% group_by(Class.Type, Sex, Time) %>% shapiro_test(IQ)
 print('Outlier check:')
 VCIdat %>% group_by(Class.Type, Sex, Time) %>% identify_outliers(IQ)
@@ -60,7 +60,7 @@ mixed_aov <- aov(IQ ~ Sex*Class.Type*Time + Error(Subject/(Time)) + Sex*Class.Ty
 summary(mixed_aov)
 
 print('************************** WMI *************************')
-print('Shapiro test for notmality:')
+print('Shapiro test for normality:')
 WMIdat %>% group_by(Class.Type, Sex, Time) %>% shapiro_test(IQ)
 print('Outlier check:')
 WMIdat %>% group_by(Class.Type, Sex, Time) %>% identify_outliers(IQ)
